@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata = {
   title: "MineControlCli - Manage Minecraft Servers with Ease",
   description: "A powerful CLI tool to create, manage, and run Minecraft servers effortlessly.",
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
