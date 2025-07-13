@@ -93,10 +93,22 @@ export default function Home() {
               <div className="space-y-3">
                 <p className="text-base text-foreground/80 font-medium">Available on all your favorite platforms</p>
                 <div className="flex justify-center items-center space-x-8">
-                  <Apple className="h-8 w-8 hover:text-foreground transition-colors" />
-                  <Linux className="h-8 w-8 hover:text-foreground transition-colors" />
-                  <Windows className="h-8 w-8 hover:text-foreground transition-colors" />
-                  <Coffee className="h-8 w-8 hover:text-foreground transition-colors" />
+                  <div className="flex flex-col items-center space-y-2">
+                    <Apple className="h-8 w-8 hover:text-foreground transition-colors" />
+                    <span className="text-xs text-foreground/70">macOS</span>
+                  </div>
+                  <div className="flex flex-col items-center space-y-2">
+                    <Linux className="h-8 w-8 hover:text-foreground transition-colors" />
+                    <span className="text-xs text-foreground/70">Linux</span>
+                  </div>
+                  <div className="flex flex-col items-center space-y-2">
+                    <Windows className="h-8 w-8 hover:text-foreground transition-colors" />
+                    <span className="text-xs text-foreground/70">Windows</span>
+                  </div>
+                  <div className="flex flex-col items-center space-y-2">
+                    <Coffee className="h-8 w-8 hover:text-foreground transition-colors" />
+                    <span className="text-xs text-foreground/70">Java</span>
+                  </div>
                 </div>
               </div>
               <div className="flex space-x-4">
