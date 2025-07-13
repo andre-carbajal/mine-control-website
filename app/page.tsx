@@ -7,14 +7,13 @@ import {
   Trash2,
   Play,
   Download,
-  Github,
   Apple,
   LaptopIcon as Linux,
   ComputerIcon as Windows,
   Coffee,
 } from "lucide-react"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { OptimizedImage } from "@/components/ui/optimized-image"
+import { GitHubButton } from "@/components/github-button"
 import { LOADER_IMAGES, type LoaderType } from "@/lib/images"
 import { ReactNode } from "react"
 
@@ -76,11 +75,11 @@ export default function Home() {
               <Link href="#features">Features</Link>
             </nav>
           </div>
-          <ThemeToggle />
+          <GitHubButton owner="andre-carbajal" repo="mine-control-cli" />
         </div>
       </header>
       <main className="flex-1 pt-14">
-        <section className="w-full py-8 md:py-16 lg:py-24 xl:py-32 bg-purple-100 dark:bg-purple-900">
+        <section className="w-full py-8 md:py-16 lg:py-24 xl:py-32 bg-purple-900">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
             <div className="flex flex-col items-center space-y-8 text-center">
               <div className="space-y-2">
@@ -104,18 +103,12 @@ export default function Home() {
                 <Button size="lg" asChild>
                   <Link href="https://github.com/andre-carbajal/mine-control-cli/releases">Download Now</Link>
                 </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link href="https://github.com/andre-carbajal/mine-control-cli">
-                    <Github className="mr-2 h-4 w-4" />
-                    GitHub
-                  </Link>
-                </Button>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="loaders" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+        <section id="loaders" className="w-full py-12 md:py-24 lg:py-32 bg-gray-900">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-foreground">
               Supported Loaders
@@ -130,7 +123,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-purple-100 dark:bg-purple-900">
+        <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-purple-900">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-foreground">
               Features
