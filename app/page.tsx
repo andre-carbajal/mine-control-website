@@ -86,17 +86,17 @@ export default function Home() {
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
                         <div className="flex flex-col items-center space-y-8 text-center">
                             <div className="space-y-2">
-                                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-foreground">
+                                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl/none font-bold tracking-tighter text-foreground">
                                     Manage Minecraft Servers with Mine Control CLI
                                 </h1>
-                                <p className="mx-auto max-w-[700px] text-foreground/80 md:text-xl font-medium">
+                                <p className="mx-auto max-w-[90vw] sm:max-w-[700px] text-foreground/80 md:text-xl font-medium px-2">
                                     A powerful CLI tool to create, manage, and run Minecraft servers effortlessly.
                                 </p>
                             </div>
                             <div className="space-y-3">
                                 <p className="text-base text-foreground/80 font-medium">Available on all your favorite
                                     platforms</p>
-                                <div className="flex justify-center items-center space-x-8">
+                                <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
                                     <div className="flex flex-col items-center space-y-2">
                                         <Apple className="h-8 w-8 hover:text-foreground transition-colors"/>
                                         <span className="text-xs text-foreground/70">macOS</span>
@@ -115,8 +115,9 @@ export default function Home() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex space-x-4">
-                                <Button size="lg" asChild>
+                            <div
+                                className="flex flex-col sm:flex-row gap-3 sm:space-x-4 w-full sm:w-auto justify-center items-center">
+                                <Button size="lg" asChild className="w-full sm:w-auto">
                                     <Link href="https://github.com/andre-carbajal/mine-control-cli/releases">Download
                                         Now</Link>
                                 </Button>
@@ -125,12 +126,12 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section id="loaders" className="w-full py-12 md:py-24 lg:py-32 bg-gray-900">
+                <section id="loaders" className="w-full py-8 md:py-24 lg:py-32 bg-gray-900">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
-                        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-foreground">
+                        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tighter text-center mb-8 md:mb-12 text-foreground">
                             Supported Loaders
                         </h2>
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-8">
                             <LoaderCard loaderType="vanilla" name="Vanilla"/>
                             <LoaderCard loaderType="snapshots" name="Snapshots"/>
                             <LoaderCard loaderType="paper" name="Paper"/>
@@ -140,12 +141,12 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-purple-900">
+                <section id="features" className="w-full py-8 md:py-24 lg:py-32 bg-purple-900">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
-                        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-foreground">
+                        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tighter text-center mb-8 md:mb-12 text-foreground">
                             Features
                         </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                             <FeatureCard
                                 icon={<Server className="h-10 w-10 text-purple-500"/>}
                                 title="Server Management"
@@ -189,4 +190,3 @@ export default function Home() {
         </div>
     )
 }
-
