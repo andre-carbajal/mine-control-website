@@ -142,34 +142,34 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <FeatureCard
-                icon={<Terminal className="h-10 w-10 text-purple-500" />}
-                title="Create"
-                description="Easily create new Minecraft servers with a single command."
-              />
-              <FeatureCard
-                icon={<List className="h-10 w-10 text-purple-500" />}
-                title="List"
-                description="View all your Minecraft servers at a glance."
-              />
-              <FeatureCard
-                icon={<Trash2 className="h-10 w-10 text-purple-500" />}
-                title="Delete"
-                description="Remove servers you no longer need quickly and safely."
-              />
-              <FeatureCard
-                icon={<Play className="h-10 w-10 text-purple-500" />}
-                title="Start"
-                description="Launch your Minecraft servers with ease."
+                icon={<Server className="h-10 w-10 text-purple-500" />}
+                title="Server Management"
+                description="Create, list, delete, and start servers with commands like server create, server list, and server start."
               />
               <FeatureCard
                 icon={<Download className="h-10 w-10 text-purple-500" />}
-                title="Loaders"
-                description="Check out different Minecraft server loaders effortlessly."
+                title="Backup System"
+                description="Create, list, delete, and restore server backups with backup create, backup list, and backup restore."
               />
               <FeatureCard
-                icon={<Server className="h-10 w-10 text-purple-500" />}
-                title="Backups"
-                description="Create backups of your Minecraft servers."
+                icon={<Terminal className="h-10 w-10 text-purple-500" />}
+                title="Configuration"
+                description="Manage your CLI settings with config set, config get, config list, and config reset commands."
+              />
+              <FeatureCard
+                icon={<List className="h-10 w-10 text-purple-500" />}
+                title="Loader Support"
+                description="Browse available server loaders with loader list command for different Minecraft versions."
+              />
+              <FeatureCard
+                icon={<Play className="h-10 w-10 text-purple-500" />}
+                title="Update Check"
+                description="Check if a new version is available with the update check command - manual update required."
+              />
+              <FeatureCard
+                icon={<Trash2 className="h-10 w-10 text-purple-500" />}
+                title="Easy Commands"
+                description="Use short aliases like sc (server create), sl (server list), ss (server start) for faster workflow."
               />
             </div>
           </div>
