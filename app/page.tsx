@@ -14,9 +14,18 @@ import {
   Coffee,
 } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
-import Image from "next/image"
+import { OptimizedImage } from "@/components/ui/optimized-image"
+import { LOADER_IMAGES, type LoaderType } from "@/lib/images"
+import { ReactNode } from "react"
 
-function FeatureCard({ icon, title, description, className }) {
+interface FeatureCardProps {
+  icon: ReactNode;
+  title: string;
+  description: string;
+  className?: string;
+}
+
+function FeatureCard({ icon, title, description, className = "" }: FeatureCardProps) {
   return (
     <div className={`flex flex-col items-center text-center p-4 border border-border rounded-lg bg-card ${className}`}>
       {icon}
@@ -26,10 +35,25 @@ function FeatureCard({ icon, title, description, className }) {
   )
 }
 
-function LoaderCard({ icon, name }) {
+interface LoaderCardProps {
+  loaderType: LoaderType;
+  name: string;
+}
+
+function LoaderCard({ loaderType, name }: LoaderCardProps) {
+  const imageConfig = LOADER_IMAGES[loaderType];
+  
   return (
     <div className="flex flex-col items-center text-center p-4 border border-border rounded-lg bg-card">
-      {icon}
+      <div className="relative w-16 h-16">
+        <OptimizedImage
+          src={imageConfig.src}
+          fallback={imageConfig.fallback}
+          alt={imageConfig.alt}
+          fill
+          className="object-contain"
+        />
+      </div>
       <h3 className="mt-4 text-lg font-semibold text-foreground">{name}</h3>
     </div>
   )
@@ -96,59 +120,12 @@ export default function Home() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-foreground">
               Supported Loaders
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <LoaderCard
-                icon={
-                  <div className="relative w-16 h-16">
-                    <Image
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/vanilla-I6uXuuHYjA0MSX2o9fDp3llXKLThqt.webp"
-                      alt="Vanilla Minecraft"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                }
-                name="Vanilla"
-              />
-              <LoaderCard
-                icon={
-                  <div className="relative w-16 h-16">
-                    <Image
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/snapshot-ai3Hd14ean2xi9rzSFBSFfi69vVItQ.webp"
-                      alt="Minecraft Snapshots"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                }
-                name="Snapshots"
-              />
-              <LoaderCard
-                icon={
-                  <div className="relative w-16 h-16">
-                    <Image
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/papermc-7KjaoBCWpg0uIZtHCXkEle5rHs9F57.webp"
-                      alt="PaperMC"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                }
-                name="Paper"
-              />
-              <LoaderCard
-                icon={
-                  <div className="relative w-16 h-16">
-                    <Image
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fabric-tE84zN732jqvVhozacz0zE2F5RGc2f.webp"
-                      alt="Fabric"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                }
-                name="Fabric"
-              />
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+              <LoaderCard loaderType="vanilla" name="Vanilla" />
+              <LoaderCard loaderType="snapshots" name="Snapshots" />
+              <LoaderCard loaderType="paper" name="Paper" />
+              <LoaderCard loaderType="fabric" name="Fabric" />
+              <LoaderCard loaderType="neoforge" name="NeoForge" />
             </div>
           </div>
         </section>
