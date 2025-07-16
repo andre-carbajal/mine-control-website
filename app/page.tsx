@@ -14,7 +14,7 @@ import {
 } from "lucide-react"
 import {OptimizedImage} from "@/components/ui/optimized-image"
 import {GitHubButton} from "@/components/github-button"
-import {LOADER_IMAGES, type LoaderType} from "@/lib/images"
+import {LOADER_IMAGES, type LoaderType, APP_ICON} from "@/lib/images"
 import {ReactNode} from "react"
 
 interface FeatureCardProps {
@@ -70,8 +70,16 @@ export default function Home() {
                     className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-14 max-w-screen-xl items-center justify-between">
                     <div className="flex items-center">
                         <Link className="mr-6 flex items-center space-x-2" href="/">
-                            <Server className="h-6 w-6"/>
-                            <span className="hidden font-bold sm:inline-block">Mine Control CLI</span>
+                            <div className="relative w-8 h-8">
+                                <OptimizedImage
+                                    src={APP_ICON.src}
+                                    fallback={APP_ICON.fallback}
+                                    alt={APP_ICON.alt}
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
+                            <span className="font-bold">Mine Control CLI</span>
                         </Link>
                         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
                             <Link href="#loaders">Loaders</Link>

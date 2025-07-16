@@ -26,4 +26,10 @@ export const LOADER_IMAGES = {
     },
 } as const;
 
+export const APP_ICON = {
+    src: "/images/mine-control-cli.webp",
+    fallback: "https://7mxtc6awuknyzgz3.public.blob.vercel-storage.com/mine-control-cli.webp",
+    alt: "Mine Control CLI",
+} as const;
+
 export type LoaderType = keyof typeof LOADER_IMAGES;
