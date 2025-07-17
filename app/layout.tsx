@@ -3,7 +3,6 @@ import "./globals.css"
 import {Inter} from "next/font/google"
 import {SpeedInsights} from '@vercel/speed-insights/next';
 import {Analytics} from "@vercel/analytics/react"
-import Script from "next/script"
 
 const inter = Inter({subsets: ["latin"]})
 
@@ -11,6 +10,9 @@ export const metadata = {
     title: "MineControlCli - Manage Minecraft Servers with Ease",
     description: "A powerful CLI tool to create, manage, and run Minecraft servers effortlessly.",
     generator: 'v0.dev',
+    other: {
+        'google-adsense-account': 'ca-pub-1008797346061158'
+    },
     icons: {
         icon: [
             { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -30,14 +32,6 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" suppressHydrationWarning>
-        <head>
-            <Script
-                async
-                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1008797346061158"
-                crossOrigin="anonymous"
-                strategy="beforeInteractive"
-            />
-        </head>
         <body className={inter.className}>
         {children}
         <SpeedInsights/>
