@@ -139,12 +139,13 @@ export default function Home() {
                         <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tighter text-center mb-8 md:mb-12 text-foreground">
                             Supported Loaders
                         </h2>
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-8">
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8">
                             <LoaderCard loaderType="vanilla" name="Vanilla"/>
                             <LoaderCard loaderType="snapshots" name="Snapshots"/>
                             <LoaderCard loaderType="paper" name="Paper"/>
                             <LoaderCard loaderType="fabric" name="Fabric"/>
                             <LoaderCard loaderType="neoforge" name="NeoForge"/>
+                            <LoaderCard loaderType="forge" name="Forge"/>
                         </div>
                     </div>
                 </section>

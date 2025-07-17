@@ -24,6 +24,11 @@ export const LOADER_IMAGES = {
         fallback: "https://7mxtc6awuknyzgz3.public.blob.vercel-storage.com/loaders/neoforge.webp",
         alt: "NeoForge",
     },
+    forge: {
+        src: "/images/loaders/forge.webp",
+        fallback: "https://7mxtc6awuknyzgz3.public.blob.vercel-storage.com/loaders/forge.webp",
+        alt: "Forge",
+    },
 } as const;
 
 export const APP_ICON = {
