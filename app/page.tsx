@@ -11,6 +11,7 @@ import {
     Server,
     Terminal,
     Trash2,
+    Zap,
 } from "lucide-react"
 import {OptimizedImage} from "@/components/ui/optimized-image"
 import {GitHubButton} from "@/components/github-button"
@@ -20,7 +21,7 @@ import {ReactNode} from "react"
 interface FeatureCardProps {
     icon: ReactNode;
     title: string;
-    description: string;
+    description: string | ReactNode;
     className?: string;
 }
 
@@ -155,7 +156,12 @@ export default function Home() {
                         <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tighter text-center mb-8 md:mb-12 text-foreground">
                             Features
                         </h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center">
+                            <FeatureCard
+                                icon={<Trash2 className="h-10 w-10 text-purple-500"/>}
+                                title="Easy Commands"
+                                description="Use short aliases like sc (server create), sl (server list), ss (server start) for faster workflow."
+                            />
                             <FeatureCard
                                 icon={<Server className="h-10 w-10 text-purple-500"/>}
                                 title="Server Management"
@@ -181,10 +187,25 @@ export default function Home() {
                                 title="Update Check"
                                 description="Check if a new version is available with the update check command - manual update required."
                             />
+                            
                             <FeatureCard
-                                icon={<Trash2 className="h-10 w-10 text-purple-500"/>}
-                                title="Easy Commands"
-                                description="Use short aliases like sc (server create), sl (server list), ss (server start) for faster workflow."
+                                icon={<Zap className="h-10 w-10 text-purple-500"/>}
+                                title="Remove Unused Chunks"
+                                description={
+                                    <>
+                                        Remove unused chunks from your world using the{" "}
+                                        <Link 
+                                            href="https://github.com/Bottle-M/PotatoPeeler" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="text-purple-300 hover:text-purple-200 underline"
+                                        >
+                                            Potato Peeler Tool
+                                        </Link>
+                                        , which helps optimize your server's size.
+                                    </>
+                                }
+                                className="lg:col-start-2"
                             />
                         </div>
                     </div>
